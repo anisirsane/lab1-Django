@@ -1,7 +1,11 @@
+# auteur: anis irsane
+# titre : laboratoire 1
+# description:un projet qui relie le drf avec le frontend de react on se connectant les endponts
+# version: 2.0
 from django.db import models
 
-# user pour le admin dashboard: admin
-# password pour le admin dashboard: admin
+# user pour le admin dashboard: anisi
+# password pour le admin dashboard: anisi
 
 # ce code et develope est customise depuis les quiz et le premier tutorial du django
 # source:https://www.mongodb.com/community/forums/t/schema-design-many-to-many-relationships-and-normalization/209349
@@ -17,6 +21,7 @@ class Module(models.Model):
     Nom = models.CharField(max_length=255)
     coeff = models.IntegerField()
     description = models.TextField()
+    # la relation est du many to many avec une table intermidiaire qu'on utilisd
     etudiants = models.ManyToManyField(Etudiant, blank=True, related_name='modules', through="Session")
 
     def __str__(self):

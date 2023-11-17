@@ -5,7 +5,7 @@ from applabo.views import ModuleViewset,EtudiantViewset, SessionViewset
 
 # Ici nous créons notre routeur
 router = routers.SimpleRouter()
-
+# on enregistre nos routes pour les endpoints
 router.register('Module', ModuleViewset, basename='Module')
 router.register('Etudiant', EtudiantViewset, basename='Etudiant')
 router.register('Session', SessionViewset, basename='Session')
